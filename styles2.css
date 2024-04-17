@@ -4,7 +4,8 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: #A3A3A3;
-    background-image: url(img/fondolibreta\ \(3\).avif);
+    background-image: url(img/whiteboard-7163891_1920.png);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     font-family: "Shadows Into Light", cursive;
@@ -94,17 +95,23 @@ h1#msg-final {
     animation: zoomInOut 1s ease;
   }
 
-  #imagenes-ahorcado {
-    height: 100px;
+#image5,
+  #image15, #image10, #image0 {
+width: 100px;
+height: auto;
+display: none;
   }
-  #image10, #image5, #image0 {
-    opacity: 0;
-    transition: opacity .3s ease;
+
+  #acierto {
+    text-align: center;
+    min-height: 24px;
+    transform: scale(0);
   }
-  .fade-in {
-    opacity: 1 !important;
+  .acierto {
+    animation: zoomInOut 1s ease;
   }
-  .encuadre {
-    border: 2px dashed crimson;
-    padding: 3px 2px 2px 6px;
+  .rojo {
+    color: red;
   }
+  .verde {
+    color: green;

@@ -85,8 +85,20 @@ function intento(letra) {
     document.getElementById("intentos").innerHTML = contador;
     document.getElementById("acierto").innerHTML = "Fallo!";
     document.getElementById("acierto").className += "acierto rojo";
-    if (contador == 10 || contador == 5 || contador == 0) {
-      document.getElementById("image" + contador).className += "fade-in";
+    if (contador <= 16) {
+      document.getElementById("image15").style.display = "block";
+    }
+    if(contador <= 10){
+      document.getElementById("image15").style.display = "none";
+      document.getElementById("image10").style.display = "block";
+    }
+    if(contador <= 5){
+      document.getElementById("image10").style.display = "none";
+      document.getElementById("image5").style.display = "block";
+    }
+    if(contador == 0){
+      document.getElementById("image5").style.display = "none";
+      document.getElementById("image0").style.display = "block";
     }
   }
   compruebaFin();
