@@ -64,7 +64,7 @@ function teclado () {
   for( ; i<=j; i++) {
       letra = String.fromCharCode(i).toUpperCase();
       document.getElementById("abcdario").innerHTML += "<button value='" + letra + "' onclick='intento(\"" + letra + "\")' class='letra' id='"+letra+"'>" + letra + "</button>";
-      if(i==110) {
+      if(i == "ñ".charCodeAt(0)) {
           document.getElementById("abcdario").innerHTML += "<button value='Ñ' onclick='intento(\"Ñ\")' class='letra' id='"+letra+"'>Ñ</button>";
       }
   }
@@ -79,12 +79,10 @@ function intento(letra) {
     }
     hueco.innerHTML = oculta.join("");
     document.getElementById("acierto").innerHTML = "Bien!";
-    document.getElementById("acierto").className += "acierto verde";
   } else {
     contador--;
     document.getElementById("intentos").innerHTML = contador;
     document.getElementById("acierto").innerHTML = "Fallo!";
-    document.getElementById("acierto").className += "acierto rojo";
     if (contador <= 16) {
       document.getElementById("image15").style.display = "block";
     }
@@ -111,8 +109,7 @@ function intento(letra) {
 function compruebaFin() {
   if (oculta.indexOf("_") === -1) {
     document.getElementById("msg-final").innerHTML = "Felicidades !!";
-    document.getElementById("msg-final").className += "zoom-in";
-    document.getElementById("palabra").className += " encuadre";
+    document.getElementById("msg-final").style.transform = "scale(1)";
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].disabled = true;
     }
@@ -121,7 +118,7 @@ function compruebaFin() {
   } else if (contador <= 0) { 
     contador = 0;
     document.getElementById("msg-final").innerHTML = "Game Over";
-    document.getElementById("msg-final").className += "zoom-in";
+    document.getElementById("msg-final").style.transform = "scale(1)"
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].disabled = true;
     }
@@ -139,5 +136,8 @@ function inicio() {
   document.getElementById("intentos").innerHTML = contador;
 }
 
+function reset(){
+  location.reload()
+}
 // Iniciar
 window.onload = inicio();
