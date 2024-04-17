@@ -85,7 +85,9 @@ function intento(letra) {
     document.getElementById("intentos").innerHTML = contador;
     document.getElementById("acierto").innerHTML = "Fallo!";
     document.getElementById("acierto").className += "acierto rojo";
-    document.getElementById("image" + contador).className += "fade-in";
+    if (contador == 10 || contador == 5 || contador == 0) {
+      document.getElementById("image" + contador).className += "fade-in";
+    }
   }
   compruebaFin();
   setTimeout(function () { 
@@ -104,8 +106,8 @@ function compruebaFin() {
     }
     document.getElementById("reset").innerHTML = "Empezar";
     btnInicio.onclick = function() { location.reload() };
-  } else if (contador <= 0) { // Cambiada la condición para detener el juego cuando contador <= 0
-    contador = 0; // Asegura que el contador no sea negativo
+  } else if (contador <= 0) { 
+    contador = 0;
     document.getElementById("msg-final").innerHTML = "Game Over";
     document.getElementById("msg-final").className += "zoom-in";
     for (let i = 0; i < buttons.length; i++) {
