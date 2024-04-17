@@ -17,7 +17,7 @@ body{
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: 1fr;
     height: 100%;
-    margin:5%;
+    margin-left: 100px;
 }
 
 #izq{
@@ -62,13 +62,16 @@ body{
         font-size: larger;
         border-radius: 5px;
         width: 100%;
+        padding: 0 1rem 0 1rem;
     }
 }
 
 #hueco-pista{
-    max-width: 100%;
+    max-width: 60%;
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
+    padding-left: 4rem;
 }
 
 h1#msg-final {
