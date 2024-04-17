@@ -101,7 +101,7 @@ function intento(letra) {
   }
   compruebaFin();
   setTimeout(function () { 
-    document.getElementById("acierto").className = ""; 
+    document.getElementById("acierto").className = "acierto";
   }, 800);
 }
 

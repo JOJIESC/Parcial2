@@ -83,7 +83,7 @@ h1#msg-final {
     margin-bottom: 0;
   }
 
-#image5,
+  #image5,
   #image15, #image10, #image0 {
 width: 100px;
 height: auto;
@@ -93,10 +93,11 @@ display: none;
   #acierto {
     text-align: center;
     min-height: 24px;
-    transform: scale(0);
+    transform: scale(1);
   }
-  .acierto {
-    animation: zoomInOut 1s ease;
+  .acierto{
+    transition: all .1s ease;
+    transform: scale(0);
   }
   .rojo {
     color: red;
