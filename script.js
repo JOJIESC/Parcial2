@@ -20,6 +20,7 @@ const palabras = [
     ["licenciatura", "ingenieria"], 
     ["consola", "RGB"]
 ];
+
 let palabra = "";
 
 let aleatorio;
