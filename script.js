@@ -28,14 +28,22 @@ let hueco = document.getElementById("palabra");
 let contador = 15;
 let buttons = document.getElementsByClassName("letra");
 let btnInicio = document.getElementById("reset");
+let palabraIndex;
 
 // ### FUNCIONES ###
 
-// Escoger palabra al azar
+// Función para generar la palabra
 function generaPalabra() {
-  const rand = Math.floor(Math.random() * palabras.length);
-  palabra = palabras[rand][0].toUpperCase();
+  palabraIndex = Math.floor(Math.random() * palabras.length);
+  palabra = palabras[palabraIndex][0].toUpperCase();
+  document.getElementById("hueco-pista").innerHTML = ""; 
   console.log(palabra);
+}
+
+
+// Función para obtener la pista correspondiente a la palabra seleccionada
+function pista() {
+  document.getElementById("hueco-pista").innerHTML = palabras[palabraIndex][1]; // Usar el índice guardado para obtener la pista
 }
 
 // Funcion para pintar los guiones de la palabra
@@ -47,16 +55,18 @@ function pintarGuiones(num) {
 }
 
 //Generar abecedario
-function teclado(a, z) {
+function teclado () {
   document.getElementById("abcdario").innerHTML = "";
-  let i = a.charCodeAt(0), j = z.charCodeAt(0);
+  let inicio = "a";
+  let fin = "z";
+  let i = inicio.charCodeAt(0), j = fin.charCodeAt(0);
   let letra = "";
-  for (; i <= j; i++) {
-    letra = String.fromCharCode(i).toUpperCase();
-    document.getElementById("abcdario").innerHTML += `<button value='${letra}' onclick='intento("${letra}")' class='letra' id='${letra}'>${letra}</button>`;
-    if (i == 110) {
-      document.getElementById("abcdario").innerHTML += "<button value='Ñ' onclick='intento(\"Ñ\")' class='letra' id='"+letra+"'>Ñ</button>";
-    }
+  for( ; i<=j; i++) {
+      letra = String.fromCharCode(i).toUpperCase();
+      document.getElementById("abcdario").innerHTML += "<button value='" + letra + "' onclick='intento(\"" + letra + "\")' class='letra' id='"+letra+"'>" + letra + "</button>";
+      if(i==110) {
+          document.getElementById("abcdario").innerHTML += "<button value='Ñ' onclick='intento(\"Ñ\")' class='letra' id='"+letra+"'>Ñ</button>";
+      }
   }
 }
 
@@ -83,12 +93,6 @@ function intento(letra) {
   }, 800);
 }
 
-// Obtener pista
-function pista() {
-  const rand = Math.floor(Math.random() * palabras.length);
-  document.getElementById("hueco-pista").innerHTML = palabras[rand][1];
-}
-
 // Compruba si ha finalizado
 function compruebaFin() {
   if (oculta.indexOf("_") === -1) {
@@ -100,7 +104,8 @@ function compruebaFin() {
     }
     document.getElementById("reset").innerHTML = "Empezar";
     btnInicio.onclick = function() { location.reload() };
-  } else if (contador === 0) {
+  } else if (contador <= 0) { // Cambiada la condición para detener el juego cuando contador <= 0
+    contador = 0; // Asegura que el contador no sea negativo
     document.getElementById("msg-final").innerHTML = "Game Over";
     document.getElementById("msg-final").className += "zoom-in";
     for (let i = 0; i < buttons.length; i++) {
@@ -115,7 +120,7 @@ function compruebaFin() {
 function inicio() {
   generaPalabra();
   pintarGuiones(palabra.length);
-  teclado("a", "z");
+  teclado();
   contador = 15;
   document.getElementById("intentos").innerHTML = contador;
 }
