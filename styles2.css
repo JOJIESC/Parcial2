@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #A3A3A3;
+    background-image: url(img/fondolibreta\ \(3\).avif);
+    background-size: cover;
+    background-position: center;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    height: 100%;
+    margin:5%;
+}
+
+#izq{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#abcdario{
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+
+    button{
+        font-family: "Shadows Into Light", cursive;
+        border: none;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 5px;
+        margin: .5rem;
+        font-size:larger
+    }
+}
+
+.teclado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.acciones{
+    font-family: "Shadows Into Light", cursive;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    button{
+        font-family: "Shadows Into Light", cursive;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: larger;
+        border-radius: 5px;
+        width: 100%;
+    }
+}
+
+#hueco-pista{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1#msg-final {
+    text-align: center;
+    color: crimson;
+    transition: all .5s ease;
+    transform: scale(0);
+    min-height: 50px;
+    margin-bottom: 0;
+  }
+  .zoom-in {
+    transform: scale(1) !important;
+  }
+  #acierto {
+    text-align: center;
+    min-height: 24px;
+    transform: scale(0);
+  }
+  .acierto {
+    animation: zoomInOut 1s ease;
+  }
