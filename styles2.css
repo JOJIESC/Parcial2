@@ -89,3 +89,18 @@ width: 100px;
 height: auto;
 display: none;
   }
+
+  #acierto {
+    text-align: center;
+    min-height: 24px;
+    transform: scale(0);
+  }
+  .acierto {
+    animation: zoomInOut 1s ease;
+  }
+  .rojo {
+    color: red;
+  }
+  .verde {
+    color: green;
+  }
