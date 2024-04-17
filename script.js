@@ -10,7 +10,7 @@ const palabras = [
   ["arreglo", "Estructura de datos que contiene una colección de elementos del mismo tipo."],
   ["frameworks", "Colección de herramientas y componentes predefinidos que facilitan el desarrollo de software."], 
   ["formato", "Estructura o disposición de algo, especialmente cuando se trata de texto o datos."], 
-  ["auriculares", "Dispositivo que se utiliza para conectar múltiples dispositivos a una red de datos."],
+  ["auriculares", "Periférico que recibe señal originada desde una fuente electrónica y permite generar ondas sonoras audibles.​."],
   ["switch", "Dispositivo de red que conecta diferentes segmentos de red y filtra el tráfico de datos."], 
   ["protocolos", "Conjunto de reglas y convenciones que permiten la comunicación entre dispositivos en una red."],
   ["internet", "Red global de computadoras interconectadas que utilizan el Protocolo de Internet para comunicarse."], 
