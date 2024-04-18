@@ -86,9 +86,21 @@ h1#msg-final {
     margin-bottom: 0;
   }
 
-  #image5,
-  #image15, #image10, #image0 {
+  #image5, #image15, #image10, #image0 {
 width: 100px;
+height: auto;
+display: none;
+  }
+
+  .tache{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 20px;
+  }
+
+  #tache5, #tache10, #tache0 {
+width: 70px;
 height: auto;
 display: none;
   }
