@@ -89,14 +89,17 @@ function intento(letra) {
     if(contador <= 10){
       document.getElementById("image15").style.display = "none";
       document.getElementById("image10").style.display = "block";
+      document.getElementById("tache10").style.display = "block";
     }
     if(contador <= 5){
       document.getElementById("image10").style.display = "none";
       document.getElementById("image5").style.display = "block";
+      document.getElementById("tache5").style.display = "block";
     }
     if(contador == 0){
       document.getElementById("image5").style.display = "none";
       document.getElementById("image0").style.display = "block";
+      document.getElementById("tache0").style.display = "block";
     }
   }
   compruebaFin();
